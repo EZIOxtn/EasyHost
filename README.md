@@ -63,5 +63,7 @@ Happy hosting! 🚀
 ## Project Photos
 
 ![alt text](Capture3.PNG)
+![alt text](Capture1.PNG)
+![alt text](Capture2.PNG)
 
     
