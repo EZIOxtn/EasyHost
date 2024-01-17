@@ -62,6 +62,6 @@ Happy hosting! 🚀
 
 ## Project Photos
 
-![Alt text]([relative%20path/to/img.jpg?raw=true](https://imgur.com/a/jEieA89)https://imgur.com/a/jEieA89 "exp")
+![alt text]([http://url/to/img.png](https://imgur.com/a/jEieA89)https://imgur.com/a/jEieA89)
 
     
