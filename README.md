@@ -29,6 +29,7 @@ Click the "Start the server" button to start hosting your website
 
 
 ## Configuration
+
 Before using EasyHost, make sure to configure your Ngrok API key:
 
 Open EasyHost and navigate to the "Settings" section.
@@ -37,21 +38,30 @@ Enter your Ngrok API key in the designated field.
 
 Save the settings.
 
-##Contributing
+## Contributing
+
+
 Contributions are welcome! If you'd like to contribute to EasyHost, please follow the contribution guidelines.
 
-##License
+## License
+
+
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-##Acknowledgments
+## Acknowledgments
+
+
 Ngrok for providing a secure tunnel to your localhost.
 
-##Support
+## Support
+
+
 For any questions or issues, please open an issue.
 
 Happy hosting! 🚀
 
-##Project Photos
+## Project Photos
 
+![Alt text]([relative%20path/to/img.jpg?raw=true](https://imgur.com/a/jEieA89)https://imgur.com/a/jEieA89 "exp")
 
     
