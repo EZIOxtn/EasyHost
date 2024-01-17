@@ -12,7 +12,7 @@ EasyHost is a Windows Form application that simplifies the process of hosting a 
 - **PHP Server:** Built-in PHP server for quick and easy website hosting.
 
 ## Requirements
-
+Download the [EasyHost v1.0 Release](https://github.com/EZIOxtn/EasyHost/releases/tag/hosting).
 - Windows OS
 - .NET Framework installed
 - Ngrok account and API key (sign up [here](https://ngrok.com/))
