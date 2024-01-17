@@ -22,12 +22,36 @@ EasyHost is a Windows Form application that simplifies the process of hosting a 
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/EasyHost.git
-   Open the solution in Visual Studio.
-   Build and run the EasyHost application.
-   Enter your Ngrok API key in the settings.
-   Click the "Start the server" button to start hosting your website
+Open the solution in Visual Studio.
+Build and run the EasyHost application.
+Enter your Ngrok API key in the settings.
+Click the "Start the server" button to start hosting your website
 
 
+## Configuration
+Before using EasyHost, make sure to configure your Ngrok API key:
+
+Open EasyHost and navigate to the "Settings" section.
+
+Enter your Ngrok API key in the designated field.
+
+Save the settings.
+
+##Contributing
+Contributions are welcome! If you'd like to contribute to EasyHost, please follow the contribution guidelines.
+
+##License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+##Acknowledgments
+Ngrok for providing a secure tunnel to your localhost.
+
+##Support
+For any questions or issues, please open an issue.
+
+Happy hosting! 🚀
+
+##Project Photos
 
 
     
