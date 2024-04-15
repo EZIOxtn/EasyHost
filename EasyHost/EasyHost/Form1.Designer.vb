@@ -23,12 +23,14 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Guna2ShadowPanel1 = New Guna.UI2.WinForms.Guna2ShadowPanel()
+        Me.Guna2ImageButton4 = New Guna.UI2.WinForms.Guna2ImageButton()
+        Me.Guna2ImageButton1 = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Guna2GradientButton3 = New Guna.UI2.WinForms.Guna2GradientButton()
@@ -44,6 +46,10 @@ Partial Class Form1
         Me.CircularPB1 = New AltoControls.CircularPB()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2ShadowPanel2 = New Guna.UI2.WinForms.Guna2ShadowPanel()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Guna2CheckBox1 = New Guna.UI2.WinForms.Guna2CheckBox()
+        Me.Guna2ImageButton3 = New Guna.UI2.WinForms.Guna2ImageButton()
+        Me.Guna2ImageButton2 = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.Guna2TextBox2 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2GradientButton1 = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
@@ -54,12 +60,6 @@ Partial Class Form1
         Me.Guna2DataGridView1 = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Guna2CheckBox1 = New Guna.UI2.WinForms.Guna2CheckBox()
-        Me.Guna2ImageButton3 = New Guna.UI2.WinForms.Guna2ImageButton()
-        Me.Guna2ImageButton2 = New Guna.UI2.WinForms.Guna2ImageButton()
-        Me.Guna2ImageButton4 = New Guna.UI2.WinForms.Guna2ImageButton()
-        Me.Guna2ImageButton1 = New Guna.UI2.WinForms.Guna2ImageButton()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.Guna2ShadowPanel1.SuspendLayout()
         Me.Guna2ShadowPanel2.SuspendLayout()
         CType(Me.Guna2DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -93,6 +93,30 @@ Partial Class Form1
         Me.Guna2ShadowPanel1.ShadowShift = 20
         Me.Guna2ShadowPanel1.Size = New System.Drawing.Size(907, 191)
         Me.Guna2ShadowPanel1.TabIndex = 0
+        '
+        'Guna2ImageButton4
+        '
+        Me.Guna2ImageButton4.CheckedState.Parent = Me.Guna2ImageButton4
+        Me.Guna2ImageButton4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Guna2ImageButton4.HoverState.Parent = Me.Guna2ImageButton4
+        Me.Guna2ImageButton4.Image = CType(resources.GetObject("Guna2ImageButton4.Image"), System.Drawing.Image)
+        Me.Guna2ImageButton4.Location = New System.Drawing.Point(82, 147)
+        Me.Guna2ImageButton4.Name = "Guna2ImageButton4"
+        Me.Guna2ImageButton4.PressedState.Parent = Me.Guna2ImageButton4
+        Me.Guna2ImageButton4.Size = New System.Drawing.Size(27, 23)
+        Me.Guna2ImageButton4.TabIndex = 13
+        '
+        'Guna2ImageButton1
+        '
+        Me.Guna2ImageButton1.CheckedState.Parent = Me.Guna2ImageButton1
+        Me.Guna2ImageButton1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Guna2ImageButton1.HoverState.Parent = Me.Guna2ImageButton1
+        Me.Guna2ImageButton1.Image = CType(resources.GetObject("Guna2ImageButton1.Image"), System.Drawing.Image)
+        Me.Guna2ImageButton1.Location = New System.Drawing.Point(51, 147)
+        Me.Guna2ImageButton1.Name = "Guna2ImageButton1"
+        Me.Guna2ImageButton1.PressedState.Parent = Me.Guna2ImageButton1
+        Me.Guna2ImageButton1.Size = New System.Drawing.Size(27, 23)
+        Me.Guna2ImageButton1.TabIndex = 6
         '
         'Label7
         '
@@ -176,9 +200,9 @@ Partial Class Form1
         Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(75, 51)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(56, 20)
+        Me.Label4.Size = New System.Drawing.Size(63, 20)
         Me.Label4.TabIndex = 8
-        Me.Label4.Text = "Ngrok"
+        Me.Label4.Text = "Tunnel"
         '
         'Guna2CustomCheckBox1
         '
@@ -327,6 +351,62 @@ Partial Class Form1
         Me.Guna2ShadowPanel2.Size = New System.Drawing.Size(905, 138)
         Me.Guna2ShadowPanel2.TabIndex = 1
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label9.Location = New System.Drawing.Point(22, 7)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(76, 13)
+        Me.Label9.TabIndex = 10
+        Me.Label9.Text = "EasyHost v1.1"
+        '
+        'Guna2CheckBox1
+        '
+        Me.Guna2CheckBox1.Animated = True
+        Me.Guna2CheckBox1.AutoSize = True
+        Me.Guna2CheckBox1.Checked = True
+        Me.Guna2CheckBox1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2CheckBox1.CheckedState.BorderRadius = 2
+        Me.Guna2CheckBox1.CheckedState.BorderThickness = 0
+        Me.Guna2CheckBox1.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.Guna2CheckBox1.ForeColor = System.Drawing.Color.Gray
+        Me.Guna2CheckBox1.Location = New System.Drawing.Point(747, 96)
+        Me.Guna2CheckBox1.Name = "Guna2CheckBox1"
+        Me.Guna2CheckBox1.Size = New System.Drawing.Size(106, 17)
+        Me.Guna2CheckBox1.TabIndex = 9
+        Me.Guna2CheckBox1.Text = "Start the browser"
+        Me.Guna2CheckBox1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.Guna2CheckBox1.UncheckedState.BorderRadius = 2
+        Me.Guna2CheckBox1.UncheckedState.BorderThickness = 0
+        Me.Guna2CheckBox1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.Guna2CheckBox1.UseVisualStyleBackColor = True
+        '
+        'Guna2ImageButton3
+        '
+        Me.Guna2ImageButton3.CheckedState.Parent = Me.Guna2ImageButton3
+        Me.Guna2ImageButton3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Guna2ImageButton3.HoverState.Parent = Me.Guna2ImageButton3
+        Me.Guna2ImageButton3.Image = CType(resources.GetObject("Guna2ImageButton3.Image"), System.Drawing.Image)
+        Me.Guna2ImageButton3.Location = New System.Drawing.Point(845, 0)
+        Me.Guna2ImageButton3.Name = "Guna2ImageButton3"
+        Me.Guna2ImageButton3.PressedState.Parent = Me.Guna2ImageButton3
+        Me.Guna2ImageButton3.Size = New System.Drawing.Size(27, 23)
+        Me.Guna2ImageButton3.TabIndex = 8
+        '
+        'Guna2ImageButton2
+        '
+        Me.Guna2ImageButton2.CheckedState.Parent = Me.Guna2ImageButton2
+        Me.Guna2ImageButton2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Guna2ImageButton2.HoverState.Parent = Me.Guna2ImageButton2
+        Me.Guna2ImageButton2.Image = CType(resources.GetObject("Guna2ImageButton2.Image"), System.Drawing.Image)
+        Me.Guna2ImageButton2.Location = New System.Drawing.Point(878, 0)
+        Me.Guna2ImageButton2.Name = "Guna2ImageButton2"
+        Me.Guna2ImageButton2.PressedState.Parent = Me.Guna2ImageButton2
+        Me.Guna2ImageButton2.Size = New System.Drawing.Size(27, 23)
+        Me.Guna2ImageButton2.TabIndex = 7
+        '
         'Guna2TextBox2
         '
         Me.Guna2TextBox2.Animated = True
@@ -348,7 +428,7 @@ Partial Class Form1
         Me.Guna2TextBox2.ForeColor = System.Drawing.Color.Blue
         Me.Guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox2.HoverState.Parent = Me.Guna2TextBox2
-        Me.Guna2TextBox2.Location = New System.Drawing.Point(247, 67)
+        Me.Guna2TextBox2.Location = New System.Drawing.Point(142, 67)
         Me.Guna2TextBox2.Margin = New System.Windows.Forms.Padding(6)
         Me.Guna2TextBox2.Name = "Guna2TextBox2"
         Me.Guna2TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -356,7 +436,7 @@ Partial Class Form1
         Me.Guna2TextBox2.ReadOnly = True
         Me.Guna2TextBox2.SelectedText = ""
         Me.Guna2TextBox2.ShadowDecoration.Parent = Me.Guna2TextBox2
-        Me.Guna2TextBox2.Size = New System.Drawing.Size(398, 46)
+        Me.Guna2TextBox2.Size = New System.Drawing.Size(596, 46)
         Me.Guna2TextBox2.TabIndex = 2
         Me.Guna2TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -448,58 +528,58 @@ Partial Class Form1
         '
         Me.TextBox1.BackColor = System.Drawing.Color.Black
         Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox1.ForeColor = System.Drawing.SystemColors.Info
         Me.TextBox1.Location = New System.Drawing.Point(1, 143)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(638, 260)
+        Me.TextBox1.Size = New System.Drawing.Size(697, 260)
         Me.TextBox1.TabIndex = 3
         '
         'Guna2DataGridView1
         '
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        Me.Guna2DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        Me.Guna2DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
         Me.Guna2DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.Guna2DataGridView1.BackgroundColor = System.Drawing.Color.Black
         Me.Guna2DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Guna2DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.Guna2DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Guna2DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Guna2DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.Guna2DataGridView1.ColumnHeadersHeight = 25
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.LawnGreen
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Guna2DataGridView1.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.LawnGreen
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Guna2DataGridView1.DefaultCellStyle = DataGridViewCellStyle7
         Me.Guna2DataGridView1.EnableHeadersVisualStyles = False
         Me.Guna2DataGridView1.GridColor = System.Drawing.Color.Black
-        Me.Guna2DataGridView1.Location = New System.Drawing.Point(647, 177)
+        Me.Guna2DataGridView1.Location = New System.Drawing.Point(707, 177)
         Me.Guna2DataGridView1.Name = "Guna2DataGridView1"
         Me.Guna2DataGridView1.ReadOnly = True
         Me.Guna2DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Info
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Guna2DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Guna2DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.Guna2DataGridView1.RowHeadersVisible = False
         Me.Guna2DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Guna2DataGridView1.Size = New System.Drawing.Size(249, 225)
+        Me.Guna2DataGridView1.Size = New System.Drawing.Size(189, 225)
         Me.Guna2DataGridView1.TabIndex = 4
         Me.Guna2DataGridView1.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.[Default]
         Me.Guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.Black
@@ -531,92 +611,12 @@ Partial Class Form1
         'Label8
         '
         Me.Label8.ForeColor = System.Drawing.Color.Gray
-        Me.Label8.Location = New System.Drawing.Point(649, 143)
+        Me.Label8.Location = New System.Drawing.Point(704, 143)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(245, 31)
         Me.Label8.TabIndex = 5
         Me.Label8.Text = "CONN_COUNT"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Guna2CheckBox1
-        '
-        Me.Guna2CheckBox1.Animated = True
-        Me.Guna2CheckBox1.AutoSize = True
-        Me.Guna2CheckBox1.Checked = True
-        Me.Guna2CheckBox1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2CheckBox1.CheckedState.BorderRadius = 2
-        Me.Guna2CheckBox1.CheckedState.BorderThickness = 0
-        Me.Guna2CheckBox1.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.Guna2CheckBox1.ForeColor = System.Drawing.Color.Gray
-        Me.Guna2CheckBox1.Location = New System.Drawing.Point(655, 95)
-        Me.Guna2CheckBox1.Name = "Guna2CheckBox1"
-        Me.Guna2CheckBox1.Size = New System.Drawing.Size(106, 17)
-        Me.Guna2CheckBox1.TabIndex = 9
-        Me.Guna2CheckBox1.Text = "Start the browser"
-        Me.Guna2CheckBox1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.Guna2CheckBox1.UncheckedState.BorderRadius = 2
-        Me.Guna2CheckBox1.UncheckedState.BorderThickness = 0
-        Me.Guna2CheckBox1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.Guna2CheckBox1.UseVisualStyleBackColor = True
-        '
-        'Guna2ImageButton3
-        '
-        Me.Guna2ImageButton3.CheckedState.Parent = Me.Guna2ImageButton3
-        Me.Guna2ImageButton3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2ImageButton3.HoverState.Parent = Me.Guna2ImageButton3
-        Me.Guna2ImageButton3.Image = CType(resources.GetObject("Guna2ImageButton3.Image"), System.Drawing.Image)
-        Me.Guna2ImageButton3.Location = New System.Drawing.Point(845, 0)
-        Me.Guna2ImageButton3.Name = "Guna2ImageButton3"
-        Me.Guna2ImageButton3.PressedState.Parent = Me.Guna2ImageButton3
-        Me.Guna2ImageButton3.Size = New System.Drawing.Size(27, 23)
-        Me.Guna2ImageButton3.TabIndex = 8
-        '
-        'Guna2ImageButton2
-        '
-        Me.Guna2ImageButton2.CheckedState.Parent = Me.Guna2ImageButton2
-        Me.Guna2ImageButton2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2ImageButton2.HoverState.Parent = Me.Guna2ImageButton2
-        Me.Guna2ImageButton2.Image = CType(resources.GetObject("Guna2ImageButton2.Image"), System.Drawing.Image)
-        Me.Guna2ImageButton2.Location = New System.Drawing.Point(878, 0)
-        Me.Guna2ImageButton2.Name = "Guna2ImageButton2"
-        Me.Guna2ImageButton2.PressedState.Parent = Me.Guna2ImageButton2
-        Me.Guna2ImageButton2.Size = New System.Drawing.Size(27, 23)
-        Me.Guna2ImageButton2.TabIndex = 7
-        '
-        'Guna2ImageButton4
-        '
-        Me.Guna2ImageButton4.CheckedState.Parent = Me.Guna2ImageButton4
-        Me.Guna2ImageButton4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2ImageButton4.HoverState.Parent = Me.Guna2ImageButton4
-        Me.Guna2ImageButton4.Image = CType(resources.GetObject("Guna2ImageButton4.Image"), System.Drawing.Image)
-        Me.Guna2ImageButton4.Location = New System.Drawing.Point(82, 147)
-        Me.Guna2ImageButton4.Name = "Guna2ImageButton4"
-        Me.Guna2ImageButton4.PressedState.Parent = Me.Guna2ImageButton4
-        Me.Guna2ImageButton4.Size = New System.Drawing.Size(27, 23)
-        Me.Guna2ImageButton4.TabIndex = 13
-        '
-        'Guna2ImageButton1
-        '
-        Me.Guna2ImageButton1.CheckedState.Parent = Me.Guna2ImageButton1
-        Me.Guna2ImageButton1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2ImageButton1.HoverState.Parent = Me.Guna2ImageButton1
-        Me.Guna2ImageButton1.Image = CType(resources.GetObject("Guna2ImageButton1.Image"), System.Drawing.Image)
-        Me.Guna2ImageButton1.Location = New System.Drawing.Point(51, 147)
-        Me.Guna2ImageButton1.Name = "Guna2ImageButton1"
-        Me.Guna2ImageButton1.PressedState.Parent = Me.Guna2ImageButton1
-        Me.Guna2ImageButton1.Size = New System.Drawing.Size(27, 23)
-        Me.Guna2ImageButton1.TabIndex = 6
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label9.Location = New System.Drawing.Point(22, 7)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(76, 13)
-        Me.Label9.TabIndex = 10
-        Me.Label9.Text = "EasyHost v1.0"
         '
         'Form1
         '

