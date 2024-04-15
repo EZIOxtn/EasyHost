@@ -8,6 +8,7 @@ EasyHost is a Windows Form application that simplifies the process of hosting a 
 
 - **One-Click Hosting:** Host your website with a single click.
 - **Ngrok Integration:** Seamless integration with the Ngrok API.
+- - **traffic logging:** log requests provided by php in the GUI . traffic logging [ip adresses](Optional + automatic in file injection)
 -  **Serveo Integration:** Seamless integration with the Serveo over ssh.
 - **Free Public URL:** Obtain a temporary public URL for your local web application.
 - **PHP Server:** Built-in PHP server for quick and easy website hosting.
