@@ -8,12 +8,14 @@ EasyHost is a Windows Form application that simplifies the process of hosting a 
 
 - **One-Click Hosting:** Host your website with a single click.
 - **Ngrok Integration:** Seamless integration with the Ngrok API.
+-  **Serveo Integration:** Seamless integration with the Serveo over ssh.
 - **Free Public URL:** Obtain a temporary public URL for your local web application.
 - **PHP Server:** Built-in PHP server for quick and easy website hosting.
 
 ## Requirements
 Download the [EasyHost v1.0 Release](https://github.com/EZIOxtn/EasyHost/releases/tag/hosting).
-Download the [EasyHost v1.1 Release](https://www.mediafire.com/file/yqsqfzdpf8d9wpa/Release.zip/file)
+-
+Download the [EasyHost v1.1 Release](https://www.mediafire.com/file/yqsqfzdpf8d9wpa/Release.zip/file).
 - Windows OS
 - .NET Framework installed
 - Ngrok account and API key (sign up [here](https://ngrok.com/))
@@ -31,7 +33,7 @@ Click the "Start the server" button to start hosting your website
 
 ## Configuration
 
-Before using EasyHost, make sure to configure your Ngrok API key:
+Before using EasyHost, configure your Ngrok API key: (Optional)
 
 Open EasyHost and navigate to the "Settings" section.
 
@@ -53,6 +55,8 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 
 Ngrok for providing a secure tunnel to your localhost.
+
+Serveo for providing a secure tunnel to your localhost over ssh.
 
 ## Support
 
