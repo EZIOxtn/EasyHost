@@ -13,6 +13,7 @@ EasyHost is a Windows Form application that simplifies the process of hosting a 
 
 ## Requirements
 Download the [EasyHost v1.0 Release](https://github.com/EZIOxtn/EasyHost/releases/tag/hosting).
+Download the [EasyHost v1.1 Release](https://www.mediafire.com/file/yqsqfzdpf8d9wpa/Release.zip/file)
 - Windows OS
 - .NET Framework installed
 - Ngrok account and API key (sign up [here](https://ngrok.com/))
